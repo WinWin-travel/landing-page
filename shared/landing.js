@@ -25,7 +25,7 @@ function buildCard(c) {
     '<div class="card-body">' +
       '<div class="card-title">' + c.title + '</div>' +
       '<div class="card-dates">' + c.dates + '</div>' +
-      '<div class="card-guests">' + ICONS.person + ' ' + c.guests + ' guests &nbsp;' + ICONS.paw + ' ' + c.dogs + ' dog</div>' +
+      '<div class="card-guests">' + ICONS.person + ' ' + c.guests + ' guests' + (c.dogs != null ? ' &nbsp;' + ICONS.paw + ' ' + c.dogs + ' dog' : '') + '</div>' +
       '<div class="card-features">' + feats + '</div>' +
     '</div>' +
     '<div class="card-divider"></div>' +

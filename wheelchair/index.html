@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big dog - friendly hotels</title>
+<title>Wheelchair-accessible hotels - WinWin.travel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/landing.css">
@@ -14,22 +14,22 @@
   <!-- NAV -->
   <nav class="nav">
     <a href="#" class="logo">
-      <img src="assets/logo.png" alt="WinWin.travel - for dog parents" />
+      <img src="assets/logo.png" alt="WinWin.travel" />
     </a>
   </nav>
 
   <!-- LEFT: Photo + headline -->
   <div class="hero-left">
-    <img class="bg" src="assets/images/hero.jpg" alt="Large dog outdoors" />
+    <img class="bg" src="assets/images/hero.png" alt="Wheelchair user at a hotel entrance" />
     <div class="hero-left-content">
-      <div class="sub-badge"><div class="sub-badge-dot"></div>Large dogs-friendly hotel rooms</div>
-      <h1 class="headline">Find hotels that welcome<br><em>big dogs</em> - in seconds.</h1>
-      <p class="sub">Stop guessing from "pet friendly" badges. Filter by actual pet size policies - and book with confidence.</p>
+      <div class="sub-badge"><div class="sub-badge-dot"></div>Real wheelchair-accessible hotel rooms</div>
+      <h1 class="headline">Find hotels that truly welcome <br><em>wheelchair</em> users</h1>
+      <p class="sub">Stop guessing from "accessible" badges. Filter by actual bathroom accessibility - and book with confidence.</p>
       <button class="cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
         </svg>
-        Find hotels that welcome big dogs
+        Find hotel rooms with accessible bathrooms
       </button>
     </div>
   </div>
@@ -44,13 +44,13 @@
       </div>
       <div>
         <div class="av-name">WinWin.travel AI Agent</div>
-        <div class="av-status"><span class="status-dot"></span>Finding hotels deals</div>
+        <div class="av-status"><span class="status-dot"></span>Finding hotel deals</div>
       </div>
     </div>
 
     <div class="msgs" id="msgs">
       <div class="row-ai">
-        <div class="bbl bbl-ai">Let's find you a hotel with the best pet policies that welcome your big dog!</div>
+        <div class="bbl bbl-ai">Tell me your destination - I'll find hotel rooms with verified accessibility details.</div>
         <span class="ts">Just now</span>
       </div>
     </div>
@@ -65,29 +65,29 @@
 
 </section>
 <script>
-var QUERY = 'I go to Berlin with my 32 kg labrador, june 16–18';
+var QUERY = 'I\'m a wheelchair user, looking for an accessible hotel room in Berlin, June 16–18';
 
 var CARDS = [
   {
     badge: 'High rating', title: 'Superior Double, King Bed', dates: '16 Jun – 18 Jun',
-    guests: 2, dogs: 1, price: '€189',
+    guests: 2, price: '€189',
     img: 'assets/uploads/card1.png',
     feats: [
-      { dog: true,  icon: 'check', text: 'Accepts dogs up to 40 kg' },
-      { dog: true,  icon: 'check', text: 'Max 1 dog per room' },
-      { dog: true,  icon: 'check', text: 'Pet fee €20/night' },
+      { dog: true,  icon: 'check', text: 'Roll-in shower' },
+      { dog: true,  icon: 'check', text: 'Hard flooring' },
+      { dog: true,  icon: 'check', text: 'Shower seat & Grab bars' },
       { dog: false, icon: 'fork',  text: 'Breakfast included' },
       { dog: false, icon: 'cal',   text: 'Flexible to reschedule' }
     ]
   },
   {
-    badge: 'No pet fee', title: 'Cosy Room, Queen Bed', dates: '16 Jun – 18 Jun',
-    guests: 2, dogs: 1, price: '€224',
+    badge: 'Accessible choice', title: 'Cosy Room, Queen Bed', dates: '16 Jun – 18 Jun',
+    guests: 2, price: '€224',
     img: 'assets/uploads/card2.png',
     feats: [
-      { dog: true,  icon: 'check', text: 'Accepts dogs up to 35 kg' },
-      { dog: true,  icon: 'check', text: 'No pet fee' },
-      { dog: true,  icon: 'check', text: 'Pet station on site' },
+      { dog: true,  icon: 'check', text: 'Shower seat & Grab bars' },
+      { dog: true,  icon: 'check', text: 'Bed height: 45–50 cm' },
+      { dog: true,  icon: 'check', text: 'Roll-in shower' },
       { dog: false, icon: 'tag',   text: 'Non-refundable' },
       { dog: false, icon: 'card',  text: 'Pay now' }
     ]
