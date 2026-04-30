@@ -80,7 +80,7 @@ h1.headline em { font-style: normal; color: var(--brand); }
   padding: .65rem 1.25rem; background: var(--brand); color: #fff; border: none;
   border-radius: var(--r); font-size: .875rem; font-weight: 600; cursor: pointer;
   font-family: var(--font); transition: background .2s, transform .15s;
-  width: 100%; justify-content: center;
+  width: 100%; justify-content: center; text-decoration: none;
 }
 .cta:hover { background: hsl(25 100% 60%); transform: translateY(-1px); }
 .cta svg { width: 15px; height: 15px; }
