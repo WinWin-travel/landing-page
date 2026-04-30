@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big dog - friendly hotels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/landing.css">
+</head>
+<body>
+<section class="hero">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="logo">
+      <img src="assets/logo-dog-parents.png" alt="WinWin.travel - for dog parents" />
+    </a>
+  </nav>
+
+  <!-- LEFT: Photo + headline -->
+  <div class="hero-left">
+    <img class="bg" src="assets/images/hero-dog.jpg" alt="Large dog outdoors" />
+    <div class="hero-left-content">
+      <div class="sub-badge"><div class="sub-badge-dot"></div>Large dogs-friendly hotel rooms</div>
+      <h1 class="headline">Find hotels that welcome<br><em>big dogs</em> - in seconds.</h1>
+      <p class="sub">Stop guessing from "pet friendly" badges. Filter by actual pet size policies - and book with confidence.</p>
+      <button class="cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        Find hotels that welcome big dogs
+      </button>
+    </div>
+  </div>
+
+  <!-- RIGHT: Animated AI chat -->
+  <div class="hero-right">
+    <div class="topbar">
+      <div class="av">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+      </div>
+      <div>
+        <div class="av-name">WinWin.travel AI Agent</div>
+        <div class="av-status"><span class="status-dot"></span>Finding confirmed hotels deals</div>
+      </div>
+    </div>
+
+    <div class="msgs" id="msgs">
+      <div class="row-ai">
+        <div class="bbl bbl-ai">I can find hotel rooms with confirmed large dog policies. Tell me your dog's weight and destination.</div>
+        <span class="ts">Just now</span>
+      </div>
+    </div>
+
+    <button class="replay" id="replayBtn" onclick="run(true)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+      </svg>
+      Replay
+    </button>
+  </div>
+
+</section>
+<script>
+var QUERY = 'I go to Berlin with my 32 kg labrador, June 16–19.';
+
+var CARDS = [
+  {
+    badge: 'High rating', title: 'Superior Double, King Bed', dates: '16 Jun – 17 Jun',
+    guests: 2, dogs: 1, price: '€189',
+    img: 'assets/uploads/card1.png',
+    feats: [
+      { dog: true,  icon: 'check', text: 'Accepts dogs up to 40 kg' },
+      { dog: true,  icon: 'check', text: 'Max 1 dog per room' },
+      { dog: true,  icon: 'check', text: 'Pet fee €20/night' },
+      { dog: false, icon: 'fork',  text: 'Breakfast included' },
+      { dog: false, icon: 'cal',   text: 'Flexible to reschedule' }
+    ]
+  },
+  {
+    badge: 'No pet fee', title: 'Cosy Room, Queen Bed', dates: '16 Jun – 17 Jun',
+    guests: 2, dogs: 1, price: '€224',
+    img: 'assets/uploads/card2.png',
+    feats: [
+      { dog: true,  icon: 'check', text: 'Accepts dogs up to 35 kg' },
+      { dog: true,  icon: 'check', text: 'No pet fee' },
+      { dog: true,  icon: 'check', text: 'Pet station on site' },
+      { dog: false, icon: 'tag',   text: 'Non-refundable' },
+      { dog: false, icon: 'card',  text: 'Pay now' }
+    ]
+  }
+];
+</script>
+<script src="../shared/landing.js"></script>
+</body>
+</html>
