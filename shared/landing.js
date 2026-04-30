@@ -44,10 +44,8 @@ function scrollBottom() { var el = document.getElementById('msgs'); el.scrollTop
 function run(reset) {
   clearAll();
   var msgs = document.getElementById('msgs');
-  var replay = document.getElementById('replayBtn');
   if (reset) {
     while (msgs.children.length > 1) msgs.removeChild(msgs.lastChild);
-    replay.classList.remove('show');
   }
 
   later(function() {
@@ -108,7 +106,7 @@ function run(reset) {
               requestAnimationFrame(function() { if (el) el.classList.add('show'); });
             });
             if (i === CARDS.length - 1) {
-              later(function() { replay.classList.add('show'); }, 700);
+              later(function() { run(true); }, 20000);
             }
           }, i * 550);
         });
