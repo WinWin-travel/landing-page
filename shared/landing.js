@@ -115,4 +115,37 @@ function run(reset) {
   }
 }
 
-window.addEventListener('load', function() { run(false); });
+// Forward UTM / click-tracking params from the current page URL onto every
+// link that points to the WinWin.travel platform, so attribution survives the
+// click-through and is captured correctly in GA.
+function forwardTrackingParams() {
+  var incoming = new URLSearchParams(window.location.search);
+
+  // Params we want to carry over to the platform.
+  var TRACKED = /^(utm_|gclid$|gbraid$|wbraid$|fbclid$|msclkid$|ttclid$|yclid$|ref$|referrer$)/i;
+
+  var carry = [];
+  incoming.forEach(function(value, key) {
+    if (TRACKED.test(key)) carry.push([key, value]);
+  });
+  if (!carry.length) return;
+
+  var links = document.querySelectorAll('a[href*="winwin.travel"]');
+  links.forEach(function(a) {
+    var url;
+    try { url = new URL(a.href, window.location.href); }
+    catch (e) { return; }
+    if (!/(^|\.)winwin\.travel$/i.test(url.hostname)) return;
+
+    carry.forEach(function(pair) {
+      // Don't override params the link already specifies explicitly.
+      if (!url.searchParams.has(pair[0])) url.searchParams.set(pair[0], pair[1]);
+    });
+    a.href = url.toString();
+  });
+}
+
+window.addEventListener('load', function() {
+  forwardTrackingParams();
+  run(false);
+});
