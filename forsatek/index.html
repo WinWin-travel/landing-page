@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TPFXL96C');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WinWin.travel - accessible travel, Dubai first</title>
+<meta name="description" content="WinWin.travel helps Dubai become the #1 destination for People of Determination. We ask every hotel more than 120 questions, collect the city as well as the hotel, and make all of it searchable through an AI agent. Proof of concept with Dubai Economy and Tourism: 51 hotels, 2,512 articles, 113 travellers, 87% would use it.">
+<meta name="theme-color" content="#31393C">
+<link rel="canonical" href="https://pages.winwin.travel/forsatek/">
+<meta property="og:title" content="Helping Dubai become the #1 destination for People of Determination">
+<meta property="og:description" content="We collect accessibility data room by room and city-wide, then make it searchable in plain language. 51 hotels, 2,512 articles, 113 travellers - 87% said they would use it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pages.winwin.travel/forsatek/">
+<meta property="og:image" content="https://pages.winwin.travel/forsatek/assets/hero-zaynab.jpg">
+<meta property="og:image:alt" content="Zaynab, a powered wheelchair user, outdoors in a London park">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../shared/favicon.png">
+
+<!--
+  Built from the design handoff in design_handoff_winwin_landing/ (Claude Design
+  project "WinWin Landing Page - Responsive"). The prototype's JS responsive
+  layer and <x-dc> runtime are deliberately not carried over - every layout
+  delta below is an ordinary media query at 760px, per the handoff README.
+
+  OPEN ITEMS before this is promoted anywhere public:
+    1. CTA destination. All seven CTAs point at Vadym's LinkedIn profile, which
+       the handoff marks as a placeholder. Search for LINKEDIN-CTA below.
+       Note the handoff spelled the profile /in/vadymklymov/ while the previous
+       version of this page used /in/vadym-klymov/ - the second one is used here.
+    2. The 2.2B senior-traveller figure is unsourced. The 1.3B figure is WHO.
+    3. UN SDG and Intelak partner logos were named in the deck but no asset
+       was supplied - the footer row has four marks, not six.
+    4. Wordmarks and partner logos are raster crops. Ask design for SVG.
+-->
+
+<style>
+:root {
+  /* Brand orange - energetic, action */
+  --brand-300: #FF3D00;
+  --brand-200: #FF5F00;
+  --brand-100: #FF9E59;
+  --brand-50:  #FFCBA8;
+  /* Primary teal - calm, trust, accessibility */
+  --primary-200: #00727F;
+  --primary-100: #078691;
+  --primary-50:  #D6EBED;
+  /* Neutrals */
+  --grey-100: #F4F4F4;
+  --grey-200: #B4B4B4;
+  --grey-300: #7E7E7E;
+  --grey-400: #474747;
+  --grey-500: #31393C;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --shadow-md: 0 6px 20px rgba(49,57,60,.10);
+
+  --gutter: clamp(18px, 5vw, 48px);
+  --section-y: clamp(56px, 9vw, 120px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--grey-500);
+  background: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary-200); text-decoration: none; }
+a:hover { color: var(--brand-300); }
+
+/* Accessibility brand - do not suppress or restyle away. */
+*:focus-visible { outline: 3px solid var(--primary-100); outline-offset: 3px; }
+
+img { display: block; }
+ul { list-style: none; }
+
+/* ---------- layout primitives ---------- */
+.wrap { max-width: 1180px; margin: 0 auto; }
+.section { padding: var(--section-y) var(--gutter); }
+.stack { display: flex; flex-direction: column; }
+
+/* ---------- type ---------- */
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase;
+}
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-size: clamp(34px, 5.2vw, 60px); line-height: 1.06; }
+h2 { font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; }
+h3 { font-weight: 700; letter-spacing: -0.01em; }
+.body { font-size: 16px; line-height: 1.6; }
+
+/* ---------- buttons (design-system Button, pill, semibold) ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-align: center;
+  font-family: inherit; font-weight: 600; line-height: 1.15;
+  border: 2px solid transparent; border-radius: 999px;
+  min-height: 44px; /* touch target - a11y requirement, overrides the DS 36px sm */
+  cursor: pointer;
+  transition: transform .16s cubic-bezier(.2,.7,.2,1), filter .16s, box-shadow .16s;
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.btn:active { transform: translateY(0); }
+.btn--sm { font-size: 14px; padding: 8px 16px; gap: 6px; }
+.btn--md { font-size: 16px; padding: 12px 24px; gap: 8px; }
+.btn--lg { font-size: 18px; padding: 16px 32px; gap: 10px; }
+.btn--teal   { background: var(--primary-200); color: #FFFFFF; box-shadow: var(--shadow-md); }
+.btn--orange { background: var(--brand-300);   color: #FFFFFF; box-shadow: var(--shadow-md); }
+.btn--white  { background: #FFFFFF; color: var(--primary-200); border-color: #FFFFFF; }
+.btn--teal:hover, .btn--orange:hover { color: #FFFFFF; }
+.btn--white:hover { color: var(--primary-200); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--grey-200);
+}
+.site-header__inner {
+  max-width: 1180px; margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.logo--full { height: 42px; width: auto; }
+.logo--mark { height: 24px; width: auto; display: none; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative; background: var(--grey-500); color: #FFFFFF;
+  overflow: hidden; min-height: min(78vh, 720px);
+  display: flex; align-items: center;
+}
+.hero__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 72% center;
+}
+.hero__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(49,57,60,.96) 0%, rgba(49,57,60,.92) 34%, rgba(49,57,60,.55) 56%, rgba(49,57,60,.08) 78%);
+}
+.hero__inner {
+  position: relative; max-width: 1180px; width: 100%; margin: 0 auto;
+  padding: clamp(40px,9vw,120px) var(--gutter);
+}
+.hero__content {
+  max-width: 680px; display: flex; flex-direction: column;
+  gap: clamp(18px,2.4vw,28px); align-items: flex-start;
+}
+.hero__eyebrow { color: var(--brand-100); }
+.hero h1 .accent { color: var(--brand-200); }
+.hero__body {
+  font-size: clamp(16px,1.7vw,21px); line-height: 1.5;
+  color: rgba(255,255,255,.92); max-width: 560px;
+}
+.hero .btn { margin-top: 4px; }
+
+/* ---------- problem ---------- */
+.problem__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px,5vw,72px); align-items: start;
+}
+.problem__copy { gap: 22px; min-width: 0; }
+.problem__copy .eyebrow { color: var(--primary-100); }
+.problem__h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.08; }
+.problem__lede {
+  font-size: clamp(18px,2vw,22px); line-height: 1.4; font-weight: 700;
+  color: var(--brand-300);
+}
+.problem__copy .body { color: var(--grey-400); max-width: 52ch; }
+.questions { gap: 10px; min-width: 0; padding-top: 38px; }
+.question {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 20px; background: var(--grey-100); border-radius: 15px;
+  font-size: clamp(16px,1.6vw,18px); font-weight: 600; line-height: 1.35;
+}
+.question::before {
+  content: "?"; color: var(--brand-300); font-size: 21px; font-weight: 800;
+  line-height: 1; flex: none;
+}
+
+/* ---------- journey ---------- */
+.journey {
+  padding: var(--section-y) 0;
+  background: var(--grey-500); color: #FFFFFF;
+}
+.journey__wrap { gap: clamp(24px,5vw,56px); }
+.journey__head { gap: 16px; max-width: 760px; padding: 0 var(--gutter); }
+.journey__head .eyebrow { color: var(--brand-100); }
+.journey__head h2 { font-size: clamp(28px, 3.8vw, 44px); }
+.journey__head .body { color: rgba(255,255,255,.82); max-width: 62ch; }
+.journey__track {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px; padding: 0 var(--gutter);
+}
+.journey__card {
+  display: flex; flex-direction: column; gap: 12px; padding: 24px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px; min-width: 0;
+}
+.journey__card h3 { font-size: 20px; }
+.meter {
+  height: 8px; border-radius: 999px;
+  background: rgba(255,255,255,.14); overflow: hidden;
+}
+.meter__fill { height: 100%; }
+.journey__status { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.journey__card p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.8); }
+.journey__hint {
+  display: none; padding: 0 var(--gutter);
+  font-size: 13px; color: rgba(255,255,255,.66);
+}
+
+/* ---------- why it matters ---------- */
+.why { background: var(--primary-50); }
+.why__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: clamp(24px,5vw,64px); align-items: center;
+}
+.why__copy { gap: 18px; min-width: 0; }
+.why__copy .eyebrow { color: var(--primary-200); }
+.why__copy .body { color: var(--grey-400); max-width: 50ch; }
+.stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px; min-width: 0;
+}
+.stat {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: clamp(22px,3vw,30px) clamp(24px,3vw,26px);
+  background: #FFFFFF; border-radius: 20px; box-shadow: var(--shadow-md);
+  min-width: 0;
+}
+.stat__figure {
+  font-size: clamp(44px,5.5vw,60px); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1; flex: none;
+}
+.stat__figure--teal   { color: var(--primary-200); }
+.stat__figure--orange { color: var(--brand-300); }
+.stat__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stat__label { font-size: 16px; font-weight: 700; line-height: 1.35; }
+.stat__sub { font-size: 14px; color: var(--grey-400); }
+
+/* ---------- what we do ---------- */
+.pillars__wrap { gap: clamp(24px,5vw,56px); }
+.pillars__head { gap: 18px; max-width: 700px; }
+.pillars__head .eyebrow { color: var(--primary-100); }
+.pillars__head .body { color: var(--grey-400); max-width: 58ch; }
+.pillars__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(14px,2vw,24px);
+}
+.pillar {
+  display: flex; flex-direction: column;
+  border-radius: 20px; overflow: hidden; background: var(--grey-100); min-width: 0;
+}
+.pillar img { width: 100%; height: clamp(190px,26vw,240px); object-fit: cover; }
+.pillar__text { display: flex; flex-direction: column; gap: 10px; padding: clamp(24px,3vw,30px); }
+.pillar__text .eyebrow { letter-spacing: .06em; }
+.pillar__text h3 { font-size: clamp(21px,2.4vw,24px); line-height: 1.22; }
+.pillar__text p { font-size: 15px; line-height: 1.6; color: var(--grey-400); }
+.pillars__close {
+  font-size: clamp(20px,2.2vw,26px); font-weight: 700; line-height: 1.35;
+  letter-spacing: -0.01em; max-width: 34ch;
+}
+
+/* ---------- product ---------- */
+.product { background: var(--primary-200); color: #FFFFFF; }
+.product__wrap { gap: clamp(44px,6vw,80px); }
+.product__block {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px,4vw,56px); align-items: center;
+}
+.product__copy { gap: 18px; min-width: 0; }
+.product__copy .eyebrow { color: var(--brand-100); }
+.product__copy .body { color: rgba(255,255,255,.88); max-width: 52ch; }
+.chat {
+  display: flex; flex-direction: column; gap: 14px;
+  background: #FFFFFF; border-radius: 22px; padding: clamp(18px,3vw,28px);
+  color: var(--grey-500); box-shadow: 0 20px 50px rgba(0,0,0,.18); min-width: 0;
+}
+.chat__ask {
+  align-self: flex-end; max-width: 94%;
+  background: var(--grey-500); color: #FFFFFF; padding: 15px 18px;
+  border-radius: 18px 18px 5px 18px;
+  font-size: clamp(15px,1.6vw,16px); line-height: 1.5;
+}
+.chat__result { display: flex; gap: 13px; align-items: flex-start; min-width: 0; }
+.chat__thumb {
+  width: clamp(74px,9vw,96px); height: clamp(74px,9vw,96px);
+  object-fit: cover; border-radius: 13px; flex: none;
+}
+.chat__meta { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.chat__title { font-size: clamp(15px,1.6vw,16px); font-weight: 700; line-height: 1.3; }
+.chat__pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.chat__pills li {
+  font-size: 12px; font-weight: 600; padding: 5px 11px; border-radius: 999px;
+  background: var(--primary-50); color: var(--primary-200);
+}
+.bubbles { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.bubbles li {
+  background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.24);
+  padding: 15px 18px; border-radius: 18px 18px 18px 5px;
+  font-size: clamp(15px,1.6vw,16px); line-height: 1.5;
+}
+
+/* ---------- infrastructure ---------- */
+.infra__wrap { gap: clamp(20px,4vw,48px); }
+.infra__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(20px,4vw,56px); align-items: center;
+}
+.infra__copy { gap: 18px; min-width: 0; }
+.infra__copy .eyebrow { color: var(--primary-100); }
+.infra__copy h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.12; }
+.infra__body { color: var(--grey-400); max-width: 56ch; min-width: 0; }
+.infra__diagram { width: 100%; height: auto; border-radius: 16px; }
+
+/* ---------- proof of concept ---------- */
+.poc { background: var(--grey-500); color: #FFFFFF; }
+.poc__wrap { gap: clamp(24px,5vw,56px); }
+.poc__head { gap: 18px; max-width: 760px; }
+.poc__head .eyebrow { color: var(--brand-100); }
+.poc__head .body { color: rgba(255,255,255,.82); max-width: 62ch; }
+.poc__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px;
+}
+.poc__card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: clamp(18px,3vw,28px) clamp(20px,3vw,28px); border-radius: 18px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  min-width: 0;
+}
+.poc__label {
+  font-size: 14px; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+.poc__value { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.poc__figure {
+  font-size: clamp(34px,4.5vw,52px); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1; color: var(--brand-200);
+}
+.poc__goal { font-size: 15px; color: rgba(255,255,255,.62); }
+.survey {
+  display: flex; flex-direction: column; gap: clamp(24px,3.5vw,36px);
+  padding: clamp(28px,4vw,56px) clamp(24px,4vw,56px);
+  border-radius: 22px; background: var(--primary-200);
+}
+.survey__quote {
+  font-size: clamp(24px,3.4vw,40px); font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.02em; max-width: 24ch; text-wrap: balance;
+}
+.survey__result {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(20px,3vw,48px); align-items: end;
+  padding-top: clamp(20px,3vw,32px);
+  border-top: 1px solid rgba(255,255,255,.28);
+}
+.survey__share { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
+.survey__pct {
+  font-size: clamp(76px,10vw,116px); font-weight: 800;
+  letter-spacing: -0.04em; line-height: .82;
+}
+.survey__said { font-size: clamp(16px,1.8vw,19px); font-weight: 600; line-height: 1.3; }
+.survey__meter { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.meter--survey { height: 10px; background: rgba(255,255,255,.22); }
+.survey__legend { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }
+.survey__count { font-size: clamp(15px,1.7vw,17px); font-weight: 700; }
+.survey__note { font-size: 13px; line-height: 1.5; color: #FFFFFF; }
+
+/* ---------- what's next ---------- */
+.next__wrap { gap: clamp(24px,5vw,56px); }
+.next__head { gap: 18px; max-width: 700px; }
+.next__head .eyebrow { color: var(--primary-100); }
+.next__head .body { color: var(--grey-400); max-width: 56ch; }
+.next__grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(12px,2vw,20px);
+}
+.next__card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: clamp(24px,3vw,32px); border-radius: 18px;
+  border: 1px solid var(--grey-200); min-width: 0;
+}
+.next__rule { width: 38px; height: 4px; border-radius: 999px; }
+.next__card h3 { font-size: clamp(20px,2.2vw,22px); }
+.next__card p { font-size: 15px; line-height: 1.6; color: var(--grey-400); }
+.next__ctas {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px; padding: clamp(24px,4vw,44px); border-radius: 22px;
+  background: var(--grey-100);
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  padding: clamp(48px,7vw,88px) var(--gutter);
+  background: var(--grey-500); color: #FFFFFF;
+}
+.site-footer__wrap { gap: clamp(30px,4vw,44px); }
+.site-footer__top {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(24px,4vw,32px); align-items: start;
+}
+.site-footer__brand { gap: 20px; min-width: 0; }
+.site-footer__wordmark {
+  width: clamp(200px,28vw,241px); height: auto; max-width: 100%;
+}
+.site-footer__claim {
+  font-size: clamp(20px,2vw,22px); font-weight: 700; line-height: 1.35;
+  letter-spacing: -0.01em; max-width: 26ch;
+}
+.site-footer__contact { gap: 14px; min-width: 0; padding-top: 36px; }
+.site-footer__contact .eyebrow { color: rgba(255,255,255,.55); }
+.site-footer__link {
+  display: inline-flex; align-items: center; gap: 13px; min-height: 44px;
+  color: #FFFFFF; font-size: clamp(18px,2vw,22px); font-weight: 700;
+  letter-spacing: -0.01em; line-height: 1.35; align-self: flex-start;
+}
+.site-footer__link:hover { color: var(--brand-200); }
+.site-footer__link img {
+  height: clamp(30px,3.4vw,34px); width: clamp(30px,3.4vw,34px);
+  flex: none; border-radius: 6px;
+}
+.partners {
+  display: flex; flex-wrap: wrap; align-items: center; gap: clamp(10px,1.6vw,16px);
+  padding-top: clamp(26px,3vw,32px); border-top: 1px solid rgba(255,255,255,.16);
+}
+/* White chips: these are multi-color marks and must never be inverted. */
+.partners li {
+  display: inline-flex; align-items: center;
+  height: clamp(62px,8vw,92px); padding: 0 clamp(18px,3vw,30px);
+  background: #FFFFFF; border-radius: 15px;
+}
+.partners img { width: auto; }
+.partners__det        { height: clamp(30px,4.4vw,46px); }
+.partners__d33        { height: clamp(28px,4.2vw,44px); }
+.partners__emirates   { height: clamp(42px,6vw,64px); }
+.partners__abudhabi   { height: clamp(26px,3.6vw,38px); }
+.legal { font-size: 13px; color: rgba(255,255,255,.66); }
+
+/* ---------- the one breakpoint ---------- */
+@media (max-width: 760px) {
+  .logo--full { display: none; }
+  .logo--mark { display: block; }
+
+  .hero { min-height: 520px; align-items: flex-end; }
+  .hero__img { object-position: 66% 20%; }
+  .hero__scrim {
+    background: linear-gradient(180deg, rgba(49,57,60,.35) 0%, rgba(49,57,60,.55) 38%, rgba(49,57,60,.95) 78%, rgba(49,57,60,.99) 100%);
+  }
+  .hero__inner { padding: 0 18px 36px; }
+
+  .questions { padding-top: 0; }
+
+  .journey__track {
+    display: flex; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding: 4px 18px 8px;
+  }
+  .journey__card { flex: none; width: 250px; scroll-snap-align: start; }
+  .journey__hint { display: block; }
+
+  .stats { grid-template-columns: 1fr; }
+  .stat { flex-direction: row; align-items: center; gap: 18px; }
+
+  .poc__grid { grid-template-columns: 1fr; }
+  .poc__card { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 12px; }
+
+  .site-footer__contact { padding-top: 0; }
+
+  .next__ctas .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPFXL96C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <img class="logo--full" src="assets/logo-wordmark.png" width="435" height="84" alt="winwin.travel - for People of Determination">
+    <img class="logo--mark" src="assets/logo-wordmark-compact.png" width="404" height="48" alt="winwin.travel">
+    <!-- LINKEDIN-CTA -->
+    <a class="btn btn--sm btn--teal" href="https://www.linkedin.com/in/vadym-klymov/" target="_blank" rel="noopener">Talk to us</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <img class="hero__img" src="assets/hero-zaynab.jpg" width="1600" height="900" fetchpriority="high"
+       alt="Zaynab, a powered wheelchair user, outdoors in a London park">
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow hero__eyebrow">Accessible travel &middot; Dubai</span>
+      <h1>Helping Dubai become the <span class="accent">#1 destination</span> for People of Determination</h1>
+      <p class="hero__body">WinWin.travel is an AI-native company. We know how to build AI agents and get the most out of AI in travel.</p>
+      <!-- LINKEDIN-CTA -->
+      <a class="btn btn--lg btn--teal" href="https://www.linkedin.com/in/vadym-klymov/" target="_blank" rel="noopener">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap problem__grid">
+    <div class="stack problem__copy">
+      <span class="eyebrow">The problem</span>
+      <h2 class="problem__h2">Zaynab. London. Powered wheelchair.</h2>
+      <p class="problem__lede">She&rsquo;s never been to Dubai. She&rsquo;s tried to plan it three times.</p>
+      <p class="body">She travels around Europe a few times a year with her sister. She has never been to Dubai, but she would love to go. Travelling so far away is frightening, because the information she needs simply is not there.</p>
+      <p class="body">She started planning a trip a few times, but never finished.</p>
+    </div>
+    <ul class="stack questions">
+      <li class="question">Is the flight accessible?</li>
+      <li class="question">What kind of ramp does the hotel have?</li>
+      <li class="question">Does the room have a roll-in shower?</li>
+      <li class="question">Is the neighbourhood accessible?</li>
+      <li class="question">How to get across the city?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="wrap stack journey__wrap">
+    <div class="stack journey__head">
+      <span class="eyebrow">The whole journey</span>
+      <h2>Is the whole journey accessible?</h2>
+      <p class="body">It is a full-time job for Zaynab to research all Dubai communities and call hundreds of hotels to find accommodation that fits her needs.</p>
+    </div>
+    <div class="journey__track">
+      <article class="journey__card">
+        <h3>Flights</h3>
+        <div class="meter"><div class="meter__fill" style="width: 80%; background: var(--primary-100)"></div></div>
+        <span class="journey__status" style="color: var(--primary-50)">Mostly findable</span>
+        <p>Emirates does this really well &mdash; accessibility information for flights is easy to find. Most other airlines do not.</p>
+      </article>
+      <article class="journey__card">
+        <h3>Hotels</h3>
+        <div class="meter"><div class="meter__fill" style="width: 12%; background: var(--brand-300)"></div></div>
+        <span class="journey__status" style="color: var(--brand-100)">Almost invisible</span>
+        <p>Ramp slopes, door widths, roll-in showers, turning space &mdash; rarely published, rarely verified.</p>
+      </article>
+      <article class="journey__card">
+        <h3>City &amp; neighbourhood</h3>
+        <div class="meter"><div class="meter__fill" style="width: 38%; background: var(--brand-100)"></div></div>
+        <span class="journey__status" style="color: var(--brand-50)">Fragmented</span>
+        <p>Information about Dubai itself is scattered, so pulling it together takes real effort.</p>
+      </article>
+      <article class="journey__card">
+        <h3>Attractions &amp; experiences</h3>
+        <div class="meter"><div class="meter__fill" style="width: 12%; background: var(--brand-300)"></div></div>
+        <span class="journey__status" style="color: var(--brand-100)">Almost invisible</span>
+        <p>What she can actually do once she is there is the hardest thing of all to find out.</p>
+      </article>
+    </div>
+    <span class="journey__hint">Swipe to see all four &rarr;</span>
+  </div>
+</section>
+
+<section class="section why">
+  <div class="wrap why__grid">
+    <div class="stack why__copy">
+      <span class="eyebrow">Why it matters</span>
+      <h2>Zaynab is not alone.</h2>
+      <p class="body">According to the World Health Organization there are 1.3 billion People of Determination worldwide. Senior travellers have similar challenges.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat__figure stat__figure--teal">1.3B</span>
+        <span class="stat__text">
+          <span class="stat__label">People of Determination</span>
+          <span class="stat__sub">16% of world population</span>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat__figure stat__figure--orange">2.2B</span>
+        <span class="stat__text">
+          <span class="stat__label">With senior travellers</span>
+          <span class="stat__sub">25% of world population</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap stack pillars__wrap">
+    <div class="stack pillars__head">
+      <span class="eyebrow">What we do</span>
+      <h2>Every step of her journey, verified.</h2>
+      <p class="body">To help Zaynab plan her trip we have to be sure every step is accessible. That is why we focus on two pillars.</p>
+    </div>
+    <div class="pillars__grid">
+      <article class="pillar">
+        <img src="assets/pillar-ramp.jpg" width="640" height="800" loading="lazy"
+             alt="Step-free ramp at a Dubai hotel entrance">
+        <div class="pillar__text">
+          <span class="eyebrow" style="color: var(--brand-300)">First pillar</span>
+          <h3>We ask every hotel more than 120 questions</h3>
+          <p>We contact hotels directly to get in-depth, measured data on their accessibility &mdash; not marketing claims.</p>
+        </div>
+      </article>
+      <article class="pillar">
+        <img src="assets/pillar-bathroom.jpg" width="640" height="800" loading="lazy"
+             alt="Accessible bathroom with roll-in shower, grab rails and a fold-down seat">
+        <div class="pillar__text">
+          <span class="eyebrow" style="color: var(--primary-100)">Second pillar</span>
+          <h3>We collect the city, not just the hotel</h3>
+          <p>From public sources, from Dubai, from partner travel companies, and from local communities.</p>
+        </div>
+      </article>
+    </div>
+    <p class="pillars__close">As a result, we have everything Zaynab was missing to go to Dubai.</p>
+  </div>
+</section>
+
+<section class="section product">
+  <div class="wrap stack product__wrap">
+
+    <div class="product__block">
+      <div class="stack product__copy">
+        <span class="eyebrow">The platform</span>
+        <h2>Ask for the room you need.</h2>
+        <p class="body">We believe an AI agent is the best way to access the information we have collected. Our platform shows her hotel rooms that are a 100% match for her request.</p>
+      </div>
+      <div class="chat">
+        <p class="chat__ask">I&rsquo;m going to Dubai in mid-November. I am a powered wheelchair user, I need turning space in the room, I need a roll-in shower.</p>
+        <div class="chat__result">
+          <img class="chat__thumb" src="assets/room-thumb.jpg" width="256" height="320" loading="lazy"
+               alt="Accessible hotel room in Dubai with a view of the skyline">
+          <div class="chat__meta">
+            <span class="chat__title">100% match &middot; Accessible King Room</span>
+            <ul class="chat__pills">
+              <li>Ramp slope 7%</li>
+              <li>Roll-in shower</li>
+              <li>Turning space 150 cm</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product__block">
+      <div class="stack product__copy">
+        <h2>Ask anything about the city.</h2>
+        <p class="body">All of this happens in one place &mdash; no need to open other websites. AI answers are 100% based on facts we collected.</p>
+      </div>
+      <ul class="bubbles">
+        <li>Tell me about the neighbourhood accessibility</li>
+        <li>How to get to Burj Khalifa, is it accessible?</li>
+        <li>Tell me about camel races</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap stack infra__wrap">
+    <div class="infra__grid">
+      <div class="stack infra__copy">
+        <span class="eyebrow">Infrastructure</span>
+        <h2>Web platform for travellers. AI-native infrastructure for travel agencies.</h2>
+      </div>
+      <p class="body infra__body">We are not only a web platform for travellers &mdash; we are also an AI-native infrastructure layer for travel agencies. Our infrastructure lets you build AI agents that can navigate the data and book hotels. Building such agents takes minutes.</p>
+    </div>
+    <img class="infra__diagram" src="assets/infrastructure-diagram.jpg" width="1600" height="235" loading="lazy"
+         alt="Diagram: one data layer branching into many agent paths">
+  </div>
+</section>
+
+<section class="section poc">
+  <div class="wrap stack poc__wrap">
+    <div class="stack poc__head">
+      <span class="eyebrow">Proof of concept in Dubai</span>
+      <h2>Two weeks. Twelve people. Every goal beaten.</h2>
+      <p class="body">We were invited by Dubai Economy and Tourism to prove that WinWin.travel can effectively collect data from hotels, from the city and from public sources &mdash; and prove the value of that information with travellers.</p>
+    </div>
+
+    <div class="poc__grid">
+      <div class="poc__card">
+        <span class="poc__label">Hotels</span>
+        <div class="poc__value"><span class="poc__figure">51</span><span class="poc__goal">goal 48</span></div>
+      </div>
+      <div class="poc__card">
+        <span class="poc__label">Articles</span>
+        <div class="poc__value"><span class="poc__figure">2,512</span><span class="poc__goal">goal 100</span></div>
+      </div>
+      <div class="poc__card">
+        <span class="poc__label">Travellers</span>
+        <div class="poc__value"><span class="poc__figure">113</span><span class="poc__goal">goal 12</span></div>
+      </div>
+    </div>
+
+    <div class="survey">
+      <p class="survey__quote">&ldquo;Would you use WinWin.travel to plan a trip to Dubai?&rdquo;</p>
+      <div class="survey__result">
+        <div class="survey__share">
+          <span class="survey__pct">87%</span>
+          <span class="survey__said">said yes</span>
+        </div>
+        <div class="survey__meter">
+          <div class="meter meter--survey"><div class="meter__fill" style="width: 87%; background: #FFFFFF"></div></div>
+          <div class="survey__legend">
+            <span class="survey__count">99 out of 113 travellers</span>
+            <span class="survey__note">DET Proof of Concept &middot; September 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap stack next__wrap">
+    <div class="stack next__head">
+      <span class="eyebrow">What&rsquo;s next</span>
+      <h2>We are ready for Phase 2. For that we need your help.</h2>
+      <p class="body">Scale data collection, and bring People of Determination to Dubai.</p>
+    </div>
+    <div class="next__grid">
+      <article class="next__card">
+        <span class="next__rule" style="background: var(--brand-300)"></span>
+        <h3>Funding partners</h3>
+        <p>Our seed round is open.</p>
+      </article>
+      <article class="next__card">
+        <span class="next__rule" style="background: var(--primary-100)"></span>
+        <h3>G2M partners</h3>
+        <p>We believe the Emirates Group is the best partner we could have. We are looking forward to working with you.</p>
+      </article>
+      <article class="next__card">
+        <span class="next__rule" style="background: var(--grey-300)"></span>
+        <h3>Other cities</h3>
+        <p>Abu Dhabi is next, and the rest of the GCC follows.</p>
+      </article>
+    </div>
+
+    <div class="next__ctas">
+      <!-- LINKEDIN-CTA -->
+      <a class="btn btn--lg btn--orange" href="https://www.linkedin.com/in/vadym-klymov/" target="_blank" rel="noopener">Our seed round is open &mdash; let&rsquo;s talk</a>
+      <!-- LINKEDIN-CTA -->
+      <a class="btn btn--lg btn--teal" href="https://www.linkedin.com/in/vadym-klymov/" target="_blank" rel="noopener">Become a G2M partner</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap stack site-footer__wrap">
+    <div class="site-footer__top">
+      <div class="stack site-footer__brand">
+        <img class="site-footer__wordmark" src="assets/wordmark-pod-light.png" width="600" height="114" loading="lazy"
+             alt="winwin.travel - for People of Determination">
+        <p class="site-footer__claim">Helping Dubai become the #1 destination for People of Determination</p>
+      </div>
+      <div class="stack site-footer__contact">
+        <span class="eyebrow">Get in touch</span>
+        <!-- LINKEDIN-CTA -->
+        <a class="site-footer__link" href="https://www.linkedin.com/in/vadym-klymov/" target="_blank" rel="noopener">
+          <img src="assets/linkedin-badge.png" width="68" height="68" loading="lazy" alt="">Vadym Klymov on LinkedIn
+        </a>
+      </div>
+    </div>
+    <ul class="partners">
+      <li><img class="partners__det" src="assets/partner-det.png" width="251" height="96" loading="lazy" alt="Dubai - Department of Economy and Tourism"></li>
+      <li><img class="partners__d33" src="assets/partner-d33.png" width="506" height="96" loading="lazy" alt="Dubai Economic Agenda D33"></li>
+      <li><img class="partners__emirates" src="assets/partner-emirates.png" width="205" height="132" loading="lazy" alt="The Emirates Group"></li>
+      <li><img class="partners__abudhabi" src="assets/partner-abu-dhabi.png" width="310" height="80" loading="lazy" alt="Experience Abu Dhabi"></li>
+    </ul>
+    <span class="legal">&copy; 2026 WinWin.travel &middot; for People of Determination</span>
+  </div>
+</footer>
+
+<script>
+// Forward UTM / click-tracking params from this page's URL onto every link that
+// points to the WinWin.travel platform, so we learn which printed surface - panel
+// QR, one-pager, business card, screen loop - actually converts.
+(function () {
+  var incoming = new URLSearchParams(window.location.search);
+  var TRACKED = /^(utm_|gclid$|gbraid$|wbraid$|fbclid$|msclkid$|ttclid$|yclid$|ref$|referrer$)/i;
+
+  var carry = [];
+  incoming.forEach(function (value, key) {
+    if (TRACKED.test(key)) carry.push([key, value]);
+  });
+  if (!carry.length) return;
+
+  document.querySelectorAll('a[href*="winwin.travel"]').forEach(function (a) {
+    var url;
+    try { url = new URL(a.href, window.location.href); }
+    catch (e) { return; }
+    if (!/(^|\.)winwin\.travel$/i.test(url.hostname)) return;
+
+    carry.forEach(function (pair) {
+      if (!url.searchParams.has(pair[0])) url.searchParams.set(pair[0], pair[1]);
+    });
+    a.href = url.toString();
+  });
+})();
+</script>
+</body>
+</html>
